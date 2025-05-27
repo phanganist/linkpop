@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import FloatingButton from './components/FloatingButton';
 import SettingsPanel from './components/SettingsPanel';
 
@@ -15,15 +16,27 @@ function App() {
   };
 
   return (
-    <div>
-      <SettingsPanel settings={settings} onSettingsChange={handleSettingsChange} />
-      <FloatingButton
-        label={settings.label}
-        link={settings.link}
-        background={settings.color}
-        position={settings.position}
-      />
-    </div>
+    <Router>
+      <Routes>
+        <Route
+          path="/settings"
+          element={
+            <SettingsPanel settings={settings} onSettingsChange={handleSettingsChange} />
+          }
+        />
+        <Route
+          path="/"
+          element={
+            <FloatingButton
+              label={settings.label}
+              link={settings.link}
+              background={settings.color}
+              position={settings.position}
+            />
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
 

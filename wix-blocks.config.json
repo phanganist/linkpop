@@ -1,0 +1,14 @@
+{
+    "components": [
+      {
+        "id": "linkpopFloatingButton",
+        "name": "LinkPop – Floating Link Button",
+        "editor": {
+          "url": "https://linkpop-32037.web.app/",
+          "settingsUrl": "https://linkpop-32037.web.app/settings"
+        },
+        "public": true
+      }
+    ]
+  }
+  

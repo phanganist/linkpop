@@ -2,17 +2,20 @@
   position: fixed;
   bottom: 24px;
   right: 24px;
+  padding: 14px 20px;
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 50%;
-  width: 56px;
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
   cursor: pointer;
-  font-size: 24px;
   z-index: 1000;
-} 
+  transition: all 0.3s ease;
+}
+
+.floating-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
