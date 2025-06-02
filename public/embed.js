@@ -57,6 +57,9 @@
         button.onclick = () => window.open(newSettings.link, "_blank");
       }
     });
+
+
+    
   
     // Validate instance
     function isInstanceValid(instance, secret) {
