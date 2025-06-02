@@ -8,7 +8,22 @@ const SettingsPanel = ({ settings = {}, onSettingsChange }) => {
   const [position, setPosition] = useState(settings.position || 'bottom-right');
 
   const updateSettings = () => {
-    onSettingsChange({ label, link, color, position });
+    const newSettings = { label, link, color, position };
+    onSettingsChange(newSettings);
+  
+    // Post to Wix embeddable apps if in iframe
+    if (window.wixEmbedsAPI?.postMessage) {
+      window.wixEmbedsAPI.postMessage({
+        type: 'settings-updated',
+        data: newSettings
+      });
+    }
+  
+    // Also post to parent window (outside iframe context)
+    window.parent.postMessage({
+      type: 'settings-updated',
+      data: newSettings
+    }, '*');
   };
 
   return (
